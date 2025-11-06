@@ -1,156 +1,274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Nithin S | Electrical Engineer</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+  <meta charset="utf-8">
+  <title>Nithin S | Electrical Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio and resume of Nithin S, Electrical Engineer.">
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0f172a;        /* slate-900 */
+      --muted:#475569;       /* slate-600 */
+      --border:#e2e8f0;      /* slate-200 */
+      --accent:#0ea5a3;      /* teal-600 */
+      --accent-weak:#daf4f3; /* pale teal */
+      --link:#0ea5e9;        /* sky-600 */
+      --shadow:0 10px 30px rgba(2, 44, 34, .08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.7;
+    }
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-                body {
-                      margin: 0;
-                            font-family: 'Poppins', sans-serif;
-                                  background-color: #0d1117;
-                                        color: #f5f5f5;
-                                            }
+    .wrap{width:min(100%,1150px); margin:0 auto; padding:1.25rem}
+    .layout{display:grid; grid-template-columns: 330px 1fr; gap:1.25rem}
+    @media (max-width: 960px){ .layout{grid-template-columns:1fr} }
 
-                                                header {
-                                                      text-align: center;
-                                                            padding: 100px 20px;
-                                                                  background: linear-gradient(120deg, #007bff, #6610f2);
-                                                                        color: white;
-                                                                            }
+    /* Sidebar */
+    .sidebar{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .cover{
+      height:120px;
+      background: linear-gradient(125deg, var(--accent-weak), #fff);
+      border-bottom:1px solid var(--border);
+    }
+    .profile{
+      padding:0 1.25rem 1.25rem;
+      position:relative;
+    }
+    .avatar{
+      width:112px; height:112px; border-radius:999px; object-fit:cover;
+      border:4px solid #fff; box-shadow:0 8px 20px rgba(0,0,0,.12);
+      transform: translateY(-50%);
+      background:#ddd;
+    }
+    .name{margin-top:-2.5rem; font-weight:800; font-size:1.7rem; letter-spacing:.3px}
+    .role{color:var(--muted); margin:.15rem 0 .75rem; font-weight:600}
 
-                                                                                header h1 {
-                                                                                      font-size: 2.5rem;
-                                                                                            margin-bottom: 0.5rem;
-                                                                                                }
+    .section{padding:1.1rem 1.25rem; border-top:1px solid var(--border)}
+    .section:first-of-type{border-top:none}
+    .section h2{margin:0 0 .6rem; font-size:1.1rem; letter-spacing:.2px}
+    .list{list-style:none; padding:0; margin:0; display:grid; gap:.45rem}
+    .list li{display:flex; gap:.5rem}
+    .pill{
+      display:inline-block; padding:.35rem .6rem; border:1px solid var(--border);
+      border-radius:999px; margin:.25rem .35rem .35rem 0; font-size:.9rem; background:#fff;
+    }
 
-                                                                                                    header p {
-                                                                                                          font-size: 1.2rem;
-                                                                                                                opacity: 0.9;
-                                                                                                                    }
+    /* Main content */
+    .content{display:grid; gap:1.25rem}
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow: var(--shadow);
+      padding:1.25rem;
+    }
+    .hero{
+      background: linear-gradient(180deg, #fff, #f9fdfd);
+      border:1px solid var(--border);
+    }
+    .hero h1{margin:0 0 .35rem; font-size:1.8rem}
+    .hero p{margin:.4rem 0 1rem; color:var(--muted)}
+    .cta{display:flex; gap:.6rem; flex-wrap:wrap}
+    .btn{
+      background: var(--accent);
+      color:#fff; border:none; border-radius:10px;
+      padding:.65rem 1.05rem; font-weight:700;
+      box-shadow:0 8px 18px rgba(14,165,163,.22);
+    }
+    .btn-outline{
+      background:#fff; color:var(--text); border:1px solid var(--border);
+      border-radius:10px; padding:.65rem 1.05rem; font-weight:600;
+    }
 
-                                                                                                                        nav {
-                                                                                                                              background: #161b22;
-                                                                                                                                    text-align: center;
-                                                                                                                                          padding: 10px 0;
-                                                                                                                                              }
+    .block h3{margin:0 0 .75rem; font-size:1.25rem}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+    @media (max-width: 800px){ .grid-2{grid-template-columns:1fr} }
+    .edu-item{padding:.65rem 0; border-bottom:1px dashed var(--border)}
+    .edu-item:last-child{border-bottom:none}
 
-                                                                                                                                                  nav a {
-                                                                                                                                                        color: #c9d1d9;
-                                                                                                                                                              margin: 0 15px;
-                                                                                                                                                                    text-decoration: none;
-                                                                                                                                                                          font-weight: 500;
-                                                                                                                                                                                transition: 0.3s;
-                                                                                                                                                                                    }
+    .proj{
+      border:1px solid var(--border); border-radius:12px; padding:1rem; background:#fff
+    }
+    .proj h4{margin:0 0 .35rem}
+    .tags{list-style:none; display:flex; flex-wrap:wrap; gap:.4rem; margin:.5rem 0 0; padding:0}
+    .tags li{background: var(--accent-weak); color:#0a6f6d; padding:.25rem .5rem; border-radius:999px; font-size:.8rem}
 
-                                                                                                                                                                                        nav a:hover {
-                                                                                                                                                                                              color: #58a6ff;
-                                                                                                                                                                                                  }
+    footer{ text-align:center; color:var(--muted); padding:1.25rem 0 }
+    @media print{
+      .btn,.cta{display:none}
+      .wrap{padding:0}
+      .card{box-shadow:none}
+      a{text-decoration:none; color:inherit}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="layout">
 
-                                                                                                                                                                                                      section {
-                                                                                                                                                                                                            max-width: 900px;
-                                                                                                                                                                                                                  margin: 40px auto;
-                                                                                                                                                                                                                        padding: 30px;
-                                                                                                                                                                                                                              background: #161b22;
-                                                                                                                                                                                                                                    border-radius: 12px;
-                                                                                                                                                                                                                                          box-shadow: 0 0 15px rgba(0,0,0,0.4);
-                                                                                                                                                                                                                                              }
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="cover"></div>
+        <div class="profile">
+          <!-- Put your photo file in the same folder and update src -->
+          <img class="avatar" src="nithin.jpg" alt="Profile photo of Nithin S">
+          <div class="name">NITHIN S</div>
+          <div class="role">Electrical Engineer</div>
+        </div>
 
-                                                                                                                                                                                                                                                  h2 {
-                                                                                                                                                                                                                                                        color: #58a6ff;
-                                                                                                                                                                                                                                                              border-bottom: 2px solid #30363d;
-                                                                                                                                                                                                                                                                    padding-bottom: 10px;
-                                                                                                                                                                                                                                                                          margin-bottom: 20px;
-                                                                                                                                                                                                                                                                              }
+        <div class="section">
+          <h2>Contact</h2>
+          <ul class="list">
+            <li><strong>Phone:</strong> +91 6383349753</li>
+            <li><strong>Email:</strong> <a href="mailto:nithinsugumaran08@gmail.com">nithinsugumaran08@gmail.com</a></li>
+            <li><strong>Address:</strong> 286/3, Lakshmanan Nagar, Alagapuram, Salem</li>
+          </ul>
+        </div>
 
-                                                                                                                                                                                                                                                                                  ul {
-                                                                                                                                                                                                                                                                                        list-style: none;
-                                                                                                                                                                                                                                                                                              padding-left: 0;
-                                                                                                                                                                                                                                                                                                  }
+        <div class="section">
+          <h2>Education</h2>
+          <div class="edu-item">
+            <strong>B.E Electrical Engineering</strong><br>
+            CET Salem • 2024–2028
+          </div>
+          <div class="edu-item">
+            <strong>High School</strong><br>
+            Equitas Gurukul Matric Hr. Sec School • 2022–2024
+          </div>
+        </div>
 
-                                                                                                                                                                                                                                                                                                      ul li {
-                                                                                                                                                                                                                                                                                                            margin-bottom: 8px;
-                                                                                                                                                                                                                                                                                                                }
+        <div class="section">
+          <h2>Expertise</h2>
+          <span class="pill">Python</span>
+          <span class="pill">Microsoft Word</span>
+          <span class="pill">Microsoft Excel</span>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                    footer {
-                                                                                                                                                                                                                                                                                                                          background: #0d1117;
-                                                                                                                                                                                                                                                                                                                                text-align: center;
-                                                                                                                                                                                                                                                                                                                                      padding: 30px;
-                                                                                                                                                                                                                                                                                                                                            color: #8b949e;
-                                                                                                                                                                                                                                                                                                                                                  border-top: 1px solid #30363d;
-                                                                                                                                                                                                                                                                                                                                                      }
+        <div class="section">
+          <h2>Languages</h2>
+          <span class="pill">English</span>
+          <span class="pill">Tamil</span>
+        </div>
+      </aside>
 
-                                                                                                                                                                                                                                                                                                                                                          .highlight {
-                                                                                                                                                                                                                                                                                                                                                                color: #58a6ff;
-                                                                                                                                                                                                                                                                                                                                                                      font-weight: bold;
-                                                                                                                                                                                                                                                                                                                                                                          }
+      <!-- Main content -->
+      <section class="content">
+        <div class="hero card">
+          <h1>Recent Electrical Engineering graduate with strong fundamentals</h1>
+          <p>Eager to apply theoretical knowledge and skills in practical settings, learn from experienced professionals, and contribute as a quick learner, team player, and strong communicator.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Get in touch</a>
+            <a class="btn-outline" href="#" id="resumeLink">Download Resume</a>
+          </div>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                              @media (max-width: 600px) {
-                                                                                                                                                                                                                                                                                                                                                                                    header h1 { font-size: 2rem; }
-                                                                                                                                                                                                                                                                                                                                                                                          section { padding: 20px; margin: 20px; }
-                                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                                                </style>
-                                                                                                                                                                                                                                                                                                                                                                                                </head>
+        <div class="card block">
+          <h3>Personal information</h3>
+          <ul class="list">
+            <li><strong>Name:</strong> NITHIN S</li>
+            <li><strong>Father’s Name:</strong> Sugumaran</li>
+            <li><strong>Mother’s Name:</strong> Selvi</li>
+            <li><strong>Address:</strong> 286/6, Lakshmanan Nagar, Alagapuram, Salem</li>
+            <li><strong>Date of Birth:</strong> 08/01/2006</li>
+            <li><strong>Age:</strong> 18</li>
+          </ul>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                <body>
-                                                                                                                                                                                                                                                                                                                                                                                                  <header>
-                                                                                                                                                                                                                                                                                                                                                                                                      <h1>NITHIN S</h1>
-                                                                                                                                                                                                                                                                                                                                                                                                          <p>Electrical Engineer | Innovator | Learner</p>
-                                                                                                                                                                                                                                                                                                                                                                                                            </header>
+        <div class="card block">
+          <h3>Extra curricular activities</h3>
+          <div class="grid-2">
+            <div class="proj">
+              <h4>Bike riding</h4>
+              <p>Safe, confident rider; participates in group rides and basic maintenance.</p>
+              <ul class="tags"><li>Endurance</li><li>Focus</li></ul>
+            </div>
+            <div class="proj">
+              <h4>Cricket</h4>
+              <p>Team player with experience in batting and field coordination.</p>
+              <ul class="tags"><li>Teamwork</li><li>Discipline</li></ul>
+            </div>
+            <div class="proj">
+              <h4>Drawing</h4>
+              <p>Sketching and basic design—useful for visualizing electrical layouts.</p>
+              <ul class="tags"><li>Creativity</li><li>Visualization</li></ul>
+            </div>
+          </div>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                              <nav>
-                                                                                                                                                                                                                                                                                                                                                                                                                  <a href="#about">About</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                      <a href="#education">Education</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                          <a href="#skills">Skills</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                              <a href="#activities">Activities</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                  <a href="#contact">Contact</a>
-<a href="Nithin_Resume.pdf" target="_blank">Resume</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                    </nav>
+        <div class="card block">
+          <h3>References</h3>
+          <ul class="list">
+            <li><strong>RABI M</strong> — M.A, M.Phil — Mail: <a href="mailto:rabi1703@gmail.com">rabi1703@gmail.com</a> — Ph: +91 70929 10873</li>
+            <li><strong>Vivekanandhan N.K</strong> — M.A, M.Phil — Mail: <a href="mailto:Vivekn45@gmail.com">Vivekn45@gmail.com</a></li>
+          </ul>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                      <section id="about">
-                                                                                                                                                                                                                                                                                                                                                                                                                                          <h2>About Me</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                              <p>I’m an aspiring <span class="highlight">Electrical Engineer</span> with a strong foundation in electrical concepts and a deep interest in applying them to real-world projects. I’m a quick learner, team player, and always eager to explore new technologies and innovations in the electrical field.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                </section>
+        <div class="card block" id="contact">
+          <h3>Contact Nithin</h3>
+          <form id="contactForm">
+            <div style="display:grid; gap:.6rem; max-width:560px">
+              <div style="display:grid; gap:.3rem">
+                <label for="name">Name</label>
+                <input id="name" type="text" required>
+              </div>
+              <div style="display:grid; gap:.3rem">
+                <label for="email">Email</label>
+                <input id="email" type="email" required>
+              </div>
+              <div style="display:grid; gap:.3rem">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+              </div>
+              <div style="display:flex; gap:.6rem; align-items:center">
+                <button class="btn" type="submit">Send message</button>
+                <span id="formStatus" style="color:var(--muted)"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                  <section id="education">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      <h2>Education</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                          <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li><strong>B.E Electrical Engineering</strong> — GCE Salem (2024–2028)</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li><strong>High School</strong> — Equitas Gurukul Matric Hr. Sec. School (2022–2024)</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </section>
+    <footer>
+      © 2025 Nithin S • Single‑file portfolio • Teal theme
+    </footer>
+  </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <section id="skills">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <h2>Skills & Expertise</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li>Python Programming</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li>Microsoft Word & Documentation</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li>Problem Solving</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li>Full Stack Basics</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
+  <script>
+    // Make the resume button work if you add resume.pdf next to index.html
+    (function(){
+      const resumeFile = 'resume.pdf'; // change if needed
+      const link = document.getElementById('resumeLink');
+      if(link){
+        link.href = resumeFile;
+        link.setAttribute('download', 'Nithin_S_Resume.pdf');
+      }
+    })();
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <section id="activities">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <h2>Extra Curricular Activities</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li>Badminton</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li>Chess</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li>Cricket</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li>Table Tennis</li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </section>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <section id="contact">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <h2>Contact</h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p><strong>Phone:</strong> +91 6383394753</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <p><strong>Email:</strong> nithinsupramani08@gmail.com</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <p><strong>Address:</strong> 268/6 Lakshmanan Nagar, Alagapuram, Salem</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </section>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <footer>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <p>© 2025 Nithin S | Electrical Engineer Portfolio</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </footer>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </html>
+    // Simple contact form UX (placeholder; add Formspree/Netlify for sending)
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending...';
+      await new Promise(r => setTimeout(r, 1200));
+      status.textContent = 'Thanks! I will get back to you soon.';
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
